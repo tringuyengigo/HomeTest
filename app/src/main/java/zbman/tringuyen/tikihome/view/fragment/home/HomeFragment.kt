@@ -74,6 +74,7 @@ class HomeFragment : Fragment(), LifecycleObserver, OnItemClickListener {
     }
 
     private fun bindData() {
+
         mainViewModel.mCombine.observe(viewLifecycleOwner, Observer { data ->
             removeLoading()
             if (!data.data?.first!!.data.isNullOrEmpty()) {
