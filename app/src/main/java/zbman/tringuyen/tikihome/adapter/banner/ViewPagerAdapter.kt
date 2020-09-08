@@ -40,7 +40,6 @@ class ViewPagerAdapter(private val itemClickListener: OnItemClickListener) : Rec
             .into(ivImage)
 
         cardViewBanner.setOnClickListener {
-            Timber.d("Click banner pos: $position  content: ${items[position]}" )
             itemClickListener.onItemClicked(Pair(items[position], ITEM_VIEW_BANNER_TYPE))
         }
 

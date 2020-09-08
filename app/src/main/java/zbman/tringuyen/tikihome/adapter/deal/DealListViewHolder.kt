@@ -22,8 +22,6 @@ import kotlin.properties.Delegates
 class DealListViewHolder(itemView: View, private val itemClickListener: OnItemClickListener) : RecyclerView.ViewHolder(itemView) {
 
     fun bindView(mData: Data) {
-        Timber.e("DealListViewHolder mData: ${Gson().toJson(mData)}")
-
         val formatter: NumberFormat = DecimalFormat("#,### đ")
         val percentDiscount = 100*mData.product.discount / mData.product.list_price
         val percentRemain = 100*mData.progress.qty_ordered / mData.progress.qty
@@ -53,8 +51,6 @@ class DealListGridRecyclerAdapter( private val itemClickListener: OnItemClickLis
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        Timber.e("DealListGridRecyclerAdapter ==>  onCreateViewHolder $viewType")
-
         return DealListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_deal, parent, false), itemClickListener)
     }
 
@@ -62,7 +58,6 @@ class DealListGridRecyclerAdapter( private val itemClickListener: OnItemClickLis
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
         val dealViewHolder = viewHolder as DealListViewHolder
-        Timber.e("DealListGridRecyclerAdapter position: $position")
         dealViewHolder.bindView(items[position])
     }
 

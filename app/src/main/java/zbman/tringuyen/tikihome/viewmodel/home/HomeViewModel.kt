@@ -55,13 +55,11 @@ class HomeViewModel constructor(private val mMainRepositoryImpl: MainRepositoryI
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .flatMap { dataCombine ->
-                    Timber.e("[fetchParallelData] dataCombine Banner + QuickLink->  ${Gson().toJson(dataCombine)}")
                     mCombine.value = Data(responseType = Status.SUCCESSFUL, data = dataCombine)
                     mFlashDealObservable
                 }
                 ?.subscribe(
                         {  dataDeal ->
-                            Timber.e("[fetchParallelData] Deal ->  ${Gson().toJson(dataDeal)}")
                             mFlashDeal.value = Data(responseType = Status.SUCCESSFUL, data = dataDeal)
                         },
                         { error ->

@@ -12,15 +12,11 @@ import zbman.tringuyen.tikihome.adapter.`interface`.AutoUpdatableAdapter
 class LoadingViewAdapter : RecyclerView.Adapter<ViewHolderLoading>(), AutoUpdatableAdapter {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderLoading {
-
-        Timber.e("ViewHolderThird -> onCreateViewHolder")
-
         val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_loading, parent, false)
         return ViewHolderLoading(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolderLoading, position: Int) {
-        Timber.e("ViewHolderThird -> onBindViewHolder")
     }
 
     override fun getItemCount(): Int {
@@ -35,7 +31,6 @@ class ViewHolderLoading(view: View) : RecyclerView.ViewHolder(view) {
         R.id.progress_bar_bottom
     )
     init {
-        Timber.e("ViewHolderFlashDeal -> init")
         progressBarBottom.visibility = View.VISIBLE
     }
 }
