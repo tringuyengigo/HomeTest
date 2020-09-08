@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite"
+    android:layout_width="@dimen/dp_100"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:cardUseCompatPadding="false">
+
+
+    <TextView
+        android:id="@+id/tvPercent"
+        android:layout_width="@dimen/dp_35"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:translationZ="90dp"
+        android:textSize="@dimen/dp_10"
+        android:gravity="center"
+        android:background="@drawable/tv_background"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivImageDeal"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_100"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_5"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_broken_image" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/dp_14"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5">
+
+            <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                android:id="@+id/progress_bar_deal"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginEnd="@dimen/dp_5"
+                app:rcBackgroundColor="#0A000000"
+                app:rcBackgroundPadding="1dp"
+                app:rcMax="100"
+                app:rcProgress="40"
+                app:rcProgressColor="#EF5350"
+                app:rcRadius="15dp"
+                app:rcSecondaryProgress="100"
+                app:rcSecondaryProgressColor="#40EF5350"
+                app:rcTextProgress="@string/text_opened_sale"
+                app:rcTextProgressSize="@dimen/dp_10"></com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar>
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:gravity="center"
+                android:text="@string/text_opened_sale"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dp_10"
+                android:translationZ="90dp" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
